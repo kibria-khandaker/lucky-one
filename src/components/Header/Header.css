@@ -1,0 +1,11 @@
+.header_section{
+    background-color: #00bcff;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 40px;
+}
+.header_section h2{
+    font-weight: lighter;
+}
