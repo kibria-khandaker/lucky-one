@@ -2,8 +2,9 @@ import React from 'react';
 import {HiOutlineShoppingCart} from 'react-icons/hi';
 import './Products.css'
 
-const Products = ({itemData}) => {
-    const {name,img,price,seller,category,ratings}=itemData;
+const Products = ({itemData,addToCartHandle}) => {
+    const {id,name,img,price,seller,category,ratings}=itemData;
+
     return (
         <div className='product_item'>
             <img src={img} alt="" />
@@ -13,7 +14,7 @@ const Products = ({itemData}) => {
             <p>Ratings : {ratings}</p>
             <div className='card_footer'>
                 <h3>${price}</h3>
-                <button>Add to cart   &nbsp; <HiOutlineShoppingCart/></button>
+                <button onClick={()=>{addToCartHandle(id)}}>Add to cart   &nbsp; <HiOutlineShoppingCart/></button>
             </div>
         </div>
     );

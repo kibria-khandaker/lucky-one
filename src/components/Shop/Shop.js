@@ -14,12 +14,16 @@ const Shop = () => {
     },[])
     // console.log(items);
 
+    const addToCartHandle = (id)=>{
+        console.log('addToCart:=', id );
+    }
+
     return (
         <div className='shop_container'>
             <div className='items_section'>
                 {
                     items.map((item)=>(
-                        <Products  key={item.id} itemData={item} />
+                        <Products key={item.id} itemData={item} addToCartHandle={addToCartHandle} />
                     ))
                 }
             </div>
