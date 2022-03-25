@@ -14,7 +14,7 @@ function App() {
     .then(data=>setItems(data))
   },[])
   console.log(items);
-  
+
   return (
     <div>
       <Header/>
