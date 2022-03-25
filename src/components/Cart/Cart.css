@@ -1,3 +1,9 @@
-.cart_item{
-    
+.cart_item {
+  background-color: white;
+  box-shadow: -4px 4px 20px 0px #d1d1d180;
+  border-radius: 5px;
+  padding: 10px;
+}
+.cart_item h3{
+    text-align: center;
 }

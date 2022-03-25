@@ -3,14 +3,16 @@ import {HiOutlineShoppingCart} from 'react-icons/hi';
 import './Products.css'
 
 const Products = ({itemData}) => {
-    const {name,img,price,seller}=itemData;
+    const {name,img,price,seller,category,ratings}=itemData;
     return (
         <div className='product_item'>
             <img src={img} alt="" />
             <h2>{name}</h2>
             <p>Seller : {seller}</p>
+            <p>Category : {category}</p>
+            <p>Ratings : {ratings}</p>
             <div className='card_footer'>
-                <h2>${price}</h2>
+                <h3>${price}</h3>
                 <button>Add to cart   &nbsp; <HiOutlineShoppingCart/></button>
             </div>
         </div>

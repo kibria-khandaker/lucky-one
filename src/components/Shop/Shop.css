@@ -5,13 +5,15 @@
 .items_section{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+    gap: 30px;
     padding: 40px;
 }
 .items_section img {
     width: 100%;
+    border-radius: 5px;
   }
 .cart_section {
-    background: rgba(255, 153, 0, 0.3);
+    padding-top: 40px;
+    padding-right: 40px;
 }
   
