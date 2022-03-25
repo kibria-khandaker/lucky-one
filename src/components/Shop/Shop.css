@@ -1,3 +1,17 @@
 .shop_container{
-    padding:0px 40px;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
 }
+.items_section{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding: 40px;
+}
+.items_section img {
+    width: 100%;
+  }
+.cart_section {
+    background: rgba(255, 153, 0, 0.3);
+}
+  
