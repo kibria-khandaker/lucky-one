@@ -32,7 +32,6 @@ const Shop = () => {
 
     const deleteItems =(cart,index)=>{
         const newCart = cart.filter((item,i) => i != index);
-        console.log(newCart);
         setCart(newCart);
     }
     
