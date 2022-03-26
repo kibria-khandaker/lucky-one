@@ -1,6 +1,21 @@
-.footer_section {
+
+.question_text{
+  max-width:600px;
+  margin: 0 auto;
   padding: 8px;
-  background-color: #00bcff;
+}
+
+.table_p_s th {
+  border: 1px solid #d2d2d2;
+  padding: 5px 10px;
+}
+.table_p_s td{
+  border: 1px solid #d2d2d2;
+  padding: 5px 10px;
+}
+.footer_text{
+  padding:10px;
   text-align: center;
+  background-color: #00bcff;
   color: #fff;
 }

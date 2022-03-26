@@ -3,7 +3,7 @@ import {HiOutlineShoppingCart} from 'react-icons/hi';
 import './Products.css'
 
 const Products = ({itemData,addToCartHandle}) => {
-    const {id,name,img,price,seller,category,ratings}=itemData;
+    const {name,img,price,seller,category,ratings}=itemData;
 
     return (
         <div className='product_item'>
@@ -14,7 +14,7 @@ const Products = ({itemData,addToCartHandle}) => {
             <p>Ratings : {ratings}</p>
             <div className='card_footer'>
                 <h3>${price}</h3>
-                <button onClick={()=>{addToCartHandle(id)}}>Add to cart   &nbsp; <HiOutlineShoppingCart/></button>
+                <button onClick={()=>{addToCartHandle(itemData)}}>Add to cart   &nbsp; <HiOutlineShoppingCart/></button>
             </div>
         </div>
     );
