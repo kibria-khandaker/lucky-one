@@ -16,7 +16,7 @@ const Footer = () => {
                 সেখানে যদি নতুন কিছু আপডেট করা হয় তখন  React virtual DOM টা HTML DOM  কে কম্পিয়ার করে state আপডেট করে . 
                 </p>
                 <br/>
-                <h3>2) How react works ?</h3>
+                <h3>2) Props Vs Stats: </h3>
                 <b>Answer:</b>  <br /> <br />             
                 <div className='table_p_s'>
                     <div>
