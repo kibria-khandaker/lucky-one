@@ -18,15 +18,30 @@
   position: relative;
 }
 
+@media only screen and (max-width: 1024px) {
+  .shop_container {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+  }
+  .cart_section {
+    padding: 20px;
+    padding-left: 5px;
+  }
+  .items_section {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+}
 @media only screen and (max-width: 768px) {
-    .shop_container {
-        display: grid;
-        grid-template-columns: 1fr;
-      }
-      .cart_section{
-        padding:40px;
-      }
-    .items_section {
-        grid-template-columns:1fr;
-    }
+  .shop_container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .cart_section {
+    padding: 40px;
+  }
+  .items_section {
+    grid-template-columns: 1fr;
+  }
 }

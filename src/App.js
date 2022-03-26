@@ -1,5 +1,5 @@
 import './App.css';
-// import Footer from './components/Footer/Footer';
+import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import Shop from './components/Shop/Shop';
 
@@ -8,7 +8,7 @@ function App() {
     <div>
       <Header/>
       <Shop/>
-      {/* <Footer/> */}
+      <Footer/>
     </div>
   );
 }

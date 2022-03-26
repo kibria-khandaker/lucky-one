@@ -6,7 +6,6 @@ import './Shop.css';
 const Shop = () => {
     const [items, setItems] = useState([]);
     const [cart, setCart] = useState([]);
-    const [chooseone, setChooseone] = useState([]);
     
     useEffect(()=>{
       const url = `https://raw.githubusercontent.com/kibria-khandaker/my-api-data/main/fakeData.json`;
@@ -16,19 +15,12 @@ const Shop = () => {
     },[])
 
     const addToCartHandle = (singleItem)=>{
-        // document.getElementById("cart_items_list").style.display = 'block'
-        // document.getElementById("randomDiv").style.display = 'block'
-        const w = cart.find( i => i.id===singleItem.id);
-        // console.log('w',w);
-        if (w) {
-            return;
+        const doubleItemFilter = cart.find(item =>item.id===singleItem.id);
+        if (doubleItemFilter) {
+            return alert(" Unable to add Duplicate items, Try another new one ");
             
         }
         const newCart = [...cart,singleItem];
-        const ww = newCart.find( i => i.id===singleItem.id);
-        // console.log('ww',ww);
-        // console.log(singleItem);
-        // console.log(newCart);
         if(newCart) {
             if (newCart.length <=4) {
                  setCart(newCart );
@@ -37,40 +29,28 @@ const Shop = () => {
             return alert(" You Added Your Maximum Items");
         }
     }
+
     const deleteItems =(cart,index)=>{
-        console.log(cart);
-        // cart.splice(index, 1)
         const newCart = cart.filter((item,i) => i != index);
         console.log(newCart);
         setCart(newCart);
-        // console.log('delete', dd, index);
     }
     
     const chooseOneCartHandle =(cart)=>{
-        // document.getElementById("cart_items_list").style.display = 'none';
-        // document.getElementById("randomDiv").style.display = 'block';
-        // newCart.find( i => i.name===newCart.name)
-        let x = Math.floor((Math.random() *3));
+        let randomItem = Math.floor((Math.random() *3));
         if (cart.length<2) {
             return;
         }
-        let chooseOne = cart.find((item,index) => index===x);
-        console.log(chooseOne);
+        let chooseOne = cart.find((item,index) => index===randomItem);
         const newCart = [chooseOne];
         setCart(newCart);
-        // setChooseone(chooseOne[x]);
         return;
     }
 
     const chooseAgainHandle =()=>{
         const newCart = [];
         setCart(newCart);
-        // cart = []
-        // chooseAgain.splice(0, 4)
-        // document.getElementById("cart_items_list").style.display = 'none'
-        // document.getElementById("randomDiv").style.display = 'none'
     }
-
 
     return (
         <div className='shop_container'>
@@ -88,7 +68,6 @@ const Shop = () => {
                 <Cart 
                 chooseOneCartHandle={chooseOneCartHandle} 
                 chooseAgainHandle={chooseAgainHandle}
-                chooseone={chooseone} 
                 deleteItems={deleteItems}
                 cart={cart}/>
             </div>
