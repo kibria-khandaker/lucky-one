@@ -6,13 +6,7 @@ import './Shop.css';
 const Shop = () => {
     const [items, setItems] = useState([]);
     const [cart, setCart] = useState([]);
-    const [choose, setChoose] = useState([]);
-    // console.log(cart);
-    // let a = 4;
-    // let b = 5;
-    // let z = (a<b)
-    // console.log(z) // //true
-
+    const [chooseone, setChooseone] = useState([]);
 
     useEffect(()=>{
       const url = `https://raw.githubusercontent.com/kibria-khandaker/my-api-data/main/fakeData.json`;
@@ -22,21 +16,38 @@ const Shop = () => {
     },[])
 
     const addToCartHandle = (singleItem)=>{
+        document.getElementById("cart_items_list").style.display = 'block'
+        // document.getElementById("randomDiv").style.display = 'block'
         const newCart = [...cart,singleItem];
         if(newCart) {
             if (newCart.length <=4 ) {
-                setCart(newCart ) ;
+                if (!newCart.find( i => i.name===newCart.name)) {
+                    setCart(newCart ) ;
+                }
                 return;
             }
             return alert(" You Added Your Maximum Items");
         }
-        // console.log(singleItem);
     }
 
-const chooseCartHandle =()=>{
-    console.log("chooseCartHandle run");
-}
+    const chooseOneCartHandle =(a)=>{
+        document.getElementById("cart_items_list").style.display = 'none'
+        document.getElementById("randomDiv").style.display = 'block'
+        let x = Math.floor((Math.random() *4));
+        if (!isNaN(x)) {
+            if (!undefined) {
+                let chooseOne = a.map(pro => pro);
+                setChooseone(chooseOne[x]);
+                return;
+            }
+        }
+    }
 
+    const chooseAgainHandle =(chooseAgain)=>{
+        chooseAgain.splice(0, 4)
+        document.getElementById("cart_items_list").style.display = 'none'
+        document.getElementById("randomDiv").style.display = 'none'
+    }
 
     return (
         <div className='shop_container'>
@@ -51,7 +62,11 @@ const chooseCartHandle =()=>{
                 }
             </div>
             <div className='cart_section'>
-                <Cart chooseCartHandle={chooseCartHandle} cart={cart}></Cart>
+                <Cart 
+                chooseOneCartHandle={chooseOneCartHandle} 
+                chooseAgainHandle={chooseAgainHandle}
+                chooseone={chooseone} 
+                cart={cart}/>
             </div>
         </div>
     );

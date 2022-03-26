@@ -1,6 +1,6 @@
 import React from 'react';
-import {HiOutlineShoppingCart} from 'react-icons/hi';
-import './Products.css'
+import { HiOutlineShoppingCart } from 'react-icons/hi';
+import './Products.css';
 
 const Products = ({itemData,addToCartHandle}) => {
     const {name,img,price,seller,category,ratings}=itemData;
