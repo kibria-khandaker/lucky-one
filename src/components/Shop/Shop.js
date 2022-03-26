@@ -6,14 +6,12 @@ import './Shop.css';
 const Shop = () => {
     const [items, setItems] = useState([]);
     const [cart, setCart] = useState([]);
-
     // console.log(cart);
 
 
 
     useEffect(()=>{
-    //   const url = `https://raw.githubusercontent.com/kibria-khandaker/my-api-data/main/fakeData.json`;
-      const url = `fakeData.json`;
+      const url = `https://raw.githubusercontent.com/kibria-khandaker/my-api-data/main/fakeData.json`;
       fetch(url)
       .then(res=>res.json())
       .then(data=>setItems(data))
@@ -22,7 +20,7 @@ const Shop = () => {
     const addToCartHandle = (singleItem)=>{
         const newCart = [...cart,singleItem];
         setCart(newCart );
-        console.log(singleItem);
+        // console.log(singleItem);
     }
 
     return (

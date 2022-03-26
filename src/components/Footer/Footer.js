@@ -17,33 +17,30 @@ const Footer = () => {
                 </p>
                 <br/>
                 <h3>2) How react works ?</h3>
-                <b>Answer:</b>
-                <p>
-                <table className='table_p_s'>
-                    <tr>
-                        <th>Props</th>
-                        <th>State</th>
-                    </tr>
-                    <tr>
-                        <td>
+                <b>Answer:</b>  <br /> <br />             
+                <div className='table_p_s'>
+                    <div>
+                        <b>Props</b>
+                        <div>
                             <p> <b> =) </b> Props কম্পোনেন্টে ভেরিয়েবল এর মত পাঠিয়ে ব্যবহার যায়</p> 
                             <p> <b> =) </b> Parent Component  থেকে একে  পৰিৱৰ্তন করা হয় </p>
                             <p> <b> =) </b> কিন্তু child Component  থেকে একে শুধু ব্যবহার যায়, পৰিৱৰ্তন করা যায়না</p>
                             <p> <b> =) </b> কম্পোনেন্টে Props  এর মান পুনরায় ব্যবহার যায়</p>
                             <p> <b> =) </b> Props সাধারণত ব্যবহার হয়  components এর ডাটা  প্রধানের জন্যে সংযোগ স্থাপনে।</p>
-                        </td>
-                        <td>
+                        </div>
+                    </div>
+                    <div>
+                        <b>State</b>
+                        <div>
                             <p> <b> =) </b> State কিন্তু asynchronous উপায়ে পরিবর্তন করা যায়</p>
                             <p> <b> =) </b> Parent Component  থেকে একে পৰিৱৰ্তন করা যায়না</p>
                             <p> <b> =) </b> Child Component  থেকে একে পৰিৱৰ্তন করা যায়না</p>
                             <p> <b> =) </b> State কম্পোনেন্টের লোকাল স্কোপ যা বাইরে ব্যবহার এবং পরিবর্তন করা যায় না।</p>
                             <p> <b> =) </b> State সাধারণত ব্যবহার হয়  components এর ডাইনামিক rendering এর জন্যে </p>
 
-                        </td>
-                    </tr>
-                    
-                </table>
-                </p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <br/>
             <br/>
