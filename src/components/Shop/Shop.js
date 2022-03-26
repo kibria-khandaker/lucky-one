@@ -6,8 +6,12 @@ import './Shop.css';
 const Shop = () => {
     const [items, setItems] = useState([]);
     const [cart, setCart] = useState([]);
+    const [choose, setChoose] = useState([]);
     // console.log(cart);
-
+    // let a = 4;
+    // let b = 5;
+    // let z = (a<b)
+    // console.log(z) // //true
 
 
     useEffect(()=>{
@@ -19,9 +23,20 @@ const Shop = () => {
 
     const addToCartHandle = (singleItem)=>{
         const newCart = [...cart,singleItem];
-        setCart(newCart );
+        if(newCart) {
+            if (newCart.length <=4 ) {
+                setCart(newCart ) ;
+                return;
+            }
+            return alert(" You Added Your Maximum Items");
+        }
         // console.log(singleItem);
     }
+
+const chooseCartHandle =()=>{
+    console.log("chooseCartHandle run");
+}
+
 
     return (
         <div className='shop_container'>
@@ -36,7 +51,7 @@ const Shop = () => {
                 }
             </div>
             <div className='cart_section'>
-                <Cart cart={cart}/>
+                <Cart chooseCartHandle={chooseCartHandle} cart={cart}></Cart>
             </div>
         </div>
     );
