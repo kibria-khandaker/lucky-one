@@ -2,7 +2,7 @@ import React from 'react';
 import { MdDeleteForever } from 'react-icons/md';
 import './Cart.css';
 
-const Cart = ({cart,chooseOneCartHandle,chooseone,chooseAgainHandle}) => {
+const Cart = ({cart,chooseOneCartHandle,chooseone,chooseAgainHandle,deleteItems}) => {
 // console.log(chooseone);
     return (
         <div className='cart_item'>
@@ -12,33 +12,34 @@ const Cart = ({cart,chooseOneCartHandle,chooseone,chooseAgainHandle}) => {
             <div id='full_cart_item'>
                 <div id='cart_items_list'>
                     {
-                        cart.map((item)=>(
+                        cart.map((item,index)=>(
                             <div key={item.name} className='add_to_cart_single_item'>
                                 
                                 <div className='img_name'>
                                     <span>
                                         <img src={item.img} alt="" />
                                     </span>                    
+                                    <p> {index}</p>
                                     <p> {item.name}</p>
                                 </div>
-                                <MdDeleteForever  className='delete_cart_item'/>
+                                <MdDeleteForever onClick={()=>{deleteItems(cart,index)}} className='delete_cart_item'/>
                             </div>
                         ))
                     }
                 </div>
-                <div  className='add_to_cart_single_item ' id='randomDiv'>
+                {/* <div  className='add_to_cart_single_item ' id='randomDiv'>
                     <div className='img_name'>
                         <span>
                             <img src={chooseone?.img ?? 'try again'} alt="" />
                         </span>                    
                         <p>{chooseone?.name ?? 'try again'}</p>
                     </div>
-                </div> 
+                </div>  */}
             </div>   
                     
             <div className='chooseBtn'>
                 <button onClick={()=>{chooseOneCartHandle(cart)}}>Choose 1 for me</button>
-                <button onClick={()=>{chooseAgainHandle(cart)}} >Choose Again</button>
+                <button onClick={()=>{chooseAgainHandle()}} >Choose Again</button>
             </div>
         </div>
     );

@@ -53,5 +53,5 @@
 .chooseBtn button:nth-child(2){
   background-color: #ff1d87;
 }
-#cart_items_list{display: block;}
-#randomDiv{display: none;}
+/* #cart_items_list{display: block;}
+#randomDiv{display: none;} */
