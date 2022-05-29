@@ -1,8 +1,8 @@
 # Painting Gallery
 
-## Here is my project Live Link :  [Click Here](https://github.com/facebook/create-react-app).
+## Here is my project Live Link : [Click Here](https://stately-khapse-be55d2.netlify.app/).
 
 Or
 
-Copy the project Live Link :  [https://github.com/facebook/create-react-app](https://github.com/facebook/create-react-app)
+Copy the project Live Link : [https://stately-khapse-be55d2.netlify.app/](https://stately-khapse-be55d2.netlify.app/)
 
